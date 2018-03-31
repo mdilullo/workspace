@@ -1,0 +1,50 @@
+{
+  "name": "monitor",
+  "description": "A cookbook for monitoring services, using Sensu, a monitoring framework.",
+  "long_description": "## Description\n\nMonitor is a cookbook for monitoring services, using Sensu, a\nmonitoring framework. The default recipe installs & configures the\nSensu client (monitoring agent), as well as common service check\ndependencies. The master recipe installs & configures the Sensu server,\nAPI, Uchiwa (dashboard), & their dependencies (eg. RabbitMQ & Redis).\nThe remaining recipes are intended to put monitoring checks in place\nin order to monitor specific services (eg. `recipe[monitor::redis]`).\n\nLearn more about Sensu [Here](http://sensuapp.org/docs).\n\n### THIS COOKBOOK SERVES AS AN EXAMPLE!!!\n\nThere are many ways to deploy/use Sensu and its dependencies, this\n\"wrapper\" cookbook is opinionated, you may not agree with its approach\nand choices. If this cookbook can serve as the base for your\nmonitoring cookbook, fork it :-)\n\n## Requirements\n\nCookbooks:\n\n- [Sensu](http://community.opscode.com/cookbooks/sensu)\n- [Uchiwa](http://community.opscode.com/cookbooks/uchiwa)\n- [sudo](http://community.opscode.com/cookbooks/sudo)\n\n## Attributes\n\n`node[\"monitor\"][\"master_address\"]` - Bypass the chef node search and\nexplicitly set the address to reach the master server.\n\n`node[\"monitor\"][\"environment_aware_search\"]` - Defaults to false.\nIf true, will limit search to the node's chef_environment.\n\n`node[\"monitor\"][\"use_local_ipv4\"]` - Defaults to false. If true,\nuse cloud local\\_ipv4 when available instead of public\\_ipv4.\n\n`node[\"monitor\"][\"sensu_plugin_version\"]` - Sensu Plugin library\nversion.\n\n`node[\"monitor\"][\"additional_client_attributes\"]` - Additional client\nattributes to be passed to the sensu_client LWRP.\n\n`node[\"monitor\"][\"default_handlers\"]` - Default event handlers.\n\n`node[\"monitor\"][\"metric_handlers\"]` - Metric event handlers.\n\n## Usage\n\nExample: To monitor the Redis service running on a Chef node, include\n\"recipe[monitor::redis]\" in its run list.\n",
+  "maintainer": "Sean Porter Consulting",
+  "maintainer_email": "portertech@gmail.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "fedora": ">= 0.0.0"
+  },
+  "dependencies": {
+    "sensu": ">= 0.0.0",
+    "ark": ">= 0.0.0",
+    "sudo": ">= 0.0.0",
+    "uchiwa": ">= 0.0.0",
+    "postgresql": ">= 0.0.0",
+    "monit-ng": ">= 0.0.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "0.0.6",
+  "source_url": "",
+  "issues_url": ""
+}
